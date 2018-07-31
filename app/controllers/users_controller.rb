@@ -2,13 +2,24 @@ class UsersController < ApplicationController
   before_action :get_user, only: [:show]
 
   def index
-    @users = User.find(params[:id])
+    @users = User.all
+  end
+
+  def new
+    @user = User.new
   end
 
   def show
   end
 
   def create
+    user = User.new(user_params)
+
+      if user.save
+        redirect_to user
+      else
+        render :new
+      end
   end
 
   private
@@ -17,6 +28,8 @@ class UsersController < ApplicationController
     params.require(:user).permit(:name, :nickname, :avatar, :header_img)
   end
 
-
+  def get_user
+    @user = User.find(params[:id])
+  end
 
 end

@@ -1,0 +1,18 @@
+<%= form_for @user do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+  <br>
+  <%= f.label :nickname %>
+  <%= f.text_field :nickname %>
+  <br>
+  <hr>
+  <%= f.label :avatar %>
+  <%= f.file_field :avatar %>
+  <br>
+  <%= f.label :header_img %>
+  <%= f.file_field :header_img %>
+  <br>
+  <br>  
+  <%= f.submit %>
+
+<% end %>

@@ -27,8 +27,11 @@ write a little section on what active storage is, why we need it and when it cam
 4. Create relationships in models
   - has_one_attached
   - has_many_attached
-5. Accept keys (:avatar, :documents, etc) in controller strong params
+5. Accept keys in controller strong params (:avatar, :documents, etc)
 6. Accept file uploads
   - Modify forms to accept file uploads
 7. Display stored files
+  - Uncomment 'mini_magick' gem in gemfile
+  - use 'image_tag' in show page to display images
+    * example: <%= image_tag @user.avatar %>
   - access and display files in show and index pages
